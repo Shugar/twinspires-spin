@@ -1,0 +1,74 @@
+.Socials {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.social-twitter,
+.social-email,
+.social-facebook {
+  display: inline-block;
+  padding: 10px 20px 10px 50px;
+  color: #fff;
+  border-radius: 4px;
+  margin: 10px;
+  font-size: 14px;
+  position: relative;
+  font-weight: 600;
+
+  & > a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+
+.social-facebook {
+  background: #00549f;
+  padding: 10px 20px 10px 40px;
+}
+
+.social-twitter {
+  background: #55acee;
+}
+
+.social-email {
+  background: #72d282;
+  background: linear-gradient(to bottom, #72d282 0%,#12851c 100%);
+}
+
+.social-facebook:before,
+.social-email:before,
+.social-twitter:before {
+  position: absolute;
+  top: 55%;
+  left: 17px;
+  transform: translateY(-50%);
+}
+
+.social-facebook:before {
+  content: url('../Socials/2.svg');
+}
+
+.social-twitter:before {
+  content: url('../Socials/3.svg');
+}
+
+.social-email:before {
+  content: url('../Socials/1.svg');
+  left: 15px;
+  top: 55%;
+  width: 25px;
+}
+
+@media screen and (max-width: 480px) {
+  .social-facebook,
+  .social-email,
+  .social-twitter {
+    min-width: 200px;
+  }
+}
