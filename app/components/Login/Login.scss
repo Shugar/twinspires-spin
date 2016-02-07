@@ -1,10 +1,11 @@
 .login-container {
-  padding: 30px 25px 40px;
+  padding: 30px 20px 40px;
   text-align: left;
   background: #fff;
   border: 1px #bfbfbf solid;
   border-radius: 4px;
   max-width: 410px;
+  margin: 0 auto;
 }
 
 .title {
@@ -12,7 +13,8 @@
   font-weight: 600;
 }
 
-.formTitle {
+.formTitle,
+.subtitle {
   font-size: 18px;
   color: #666666;
   font-weight: 600;
@@ -47,6 +49,7 @@
   color: #fff;
   user-select: none;
   font-weight: 600;
+  text-align: center;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -64,6 +67,7 @@
   font-size: 22px;
   padding: 15px 22px;
   min-width: 245px;
+  font-weight: 400;
   background: #72d282;
   background: linear-gradient(to bottom, #72d282 0%,#12851c 100%);
 }
@@ -76,17 +80,21 @@
   color: #2e85ca;
 }
 
-.bottom-text {
-  margin-top: 30px;
-  font-size: 12px;
-  font-weight: 600;
+.bottom {
+
+  &-text {
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &-link {
+    text-decoration: underline;
+    color: #0068b3;
+    font-weight: 400;
+  }
 }
 
-.bottom-link {
-  text-decoration: underline;
-  color: #0068b3;
-  font-weight: 400;
-}
 
 
 .input::-webkit-input-placeholder {
@@ -109,4 +117,135 @@
 
 .input:placeholder-shown {
   color: #000;
+}
+
+.loggedIn {
+  text-align: center;
+}
+
+.loggedIn .button {
+  margin-top: 38px;
+}
+
+.list {
+  margin-top: 25px;
+}
+
+.subtitle {
+  padding: 0 0 10px 0;
+  line-height: 25px;
+}
+
+
+@media screen and (max-width: 960px) {
+
+  .login-container {
+    max-width: 330px;
+    padding: 30px 15px 40px;
+  }
+
+  .input {
+    width: 33%;
+  }
+
+  .iconButton {
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .formTitle {
+    font-size: 15px;
+    padding-bottom: 24px;
+    padding-top: 20px;
+  }
+
+  .button {
+    font-size: 18px;
+    min-width: 205px;
+  }
+
+  .list {
+    margin-top: 18px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 5px;
+  }
+
+  .loggedIn .button {
+    margin-top: 20px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 15px 35px;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0;
+  }
+
+  .loggedIn .button {
+    margin-top: 20px;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 35px 10px 30px;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .list {
+    margin-top: 15px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 10px;
+  }
+
+  .button {
+    font-size: 18px;
+    min-width: 200px;
+  }
+
+  .loggedIn .button {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .iconButton {
+    margin-left: 2%;
+    margin-right: 8%;
+  }
+
 }

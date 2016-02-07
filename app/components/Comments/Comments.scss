@@ -5,10 +5,17 @@
   border: 1px #bfbfbf solid;
 }
 
+.button-container {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+}
+
 .commentOne,
 .commentTwo {
   display: block;
-  padding: 40px 30px 50px 30px;
+  padding: 40px 15px 50px 15px;
+  line-height: 20px;
 }
 
 .commentTwo {
@@ -17,11 +24,12 @@
 
 .commentOne .textBlock {
   padding: 0 0 0 30px;
-  width: 90%;
+  width: 92%;
 }
 
 .commentTwo .textBlock {
-  padding: 0 60px 0 30px;
+  padding: 0 0 0 30px;
+  width: 52%;
 }
 
 .text {
@@ -32,7 +40,7 @@
 }
 
 .image {
-  width: 10%;
+  width: 8%;
   height: 66px;
 }
 
@@ -53,12 +61,119 @@
 .button {
   font-size: 22px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 4px;
   text-align: center;
   padding: 15px 22px;
+  text-decoration: none;
   user-select: none;
   background: #72d282;
   background: linear-gradient(to bottom, #72d282 0%,#12851c 100%);
   cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 960px) {
+  .comments {
+    padding: 0;
+  }
+
+  .commentOne,
+  .commentTwo {
+    display: block;
+    padding: 40px 25px 50px;
+  }
+
+  .textBlock {
+    padding: 0;
+    width: 50%
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .button {
+    font-size: 21px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .commentOne,
+  .commentTwo {
+    padding: 40px 15px 50px 20px;
+  }
+
+  .image {
+    width: 15%;
+  }
+
+  .textBlock {
+    padding: 0 0 0 19px !important;
+    width: 85% !important;
+  }
+
+  .commentTwo .textBlock {
+    width: 85% !important;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .button {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .button-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .commentOne,
+  .commentTwo {
+    padding: 35px 14px 30px 15px;
+  }
+
+  .title {
+    line-height: 27px;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+
+  .commentOne img,
+  .commentTwo img {
+    height: 100%;
+  }
+
+  .commentOne .image {
+    height: 44px;
+    vertical-align: top;
+  }
+
+  .commentOne .text {
+    padding: 0;
+  }
+
+  .commentTwo .image {
+    height: 27px;
+  }
+
+  .commentTwo .button-container {
+    width: 100%;
+  }
 }

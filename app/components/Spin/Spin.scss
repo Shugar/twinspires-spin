@@ -1,0 +1,145 @@
+.win {
+  text-align: center;
+  background: #faad42;
+  border: 10px #fff solid;
+  border-radius: 100%;
+  padding: 72px 20px 45px;
+  max-height: 442px;
+  max-width: 442px;
+  margin: 0 auto;
+}
+
+.title,
+.gift {
+  color: #04446e;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.gift {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.comeBack {
+  margin: 0 auto;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border-top: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  padding: 15px 25px;
+  max-width: 350px;
+}
+
+.logo {
+  margin-top: 45px;
+  height: 32px;
+}
+
+.spin {
+  width: 80%;
+}
+
+@media screen and (max-width: 960px) {
+  .win {
+    padding: 60px 20px 34px;
+    max-width: 420px;
+  }
+
+  .spin {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  .gift {
+    font-size: 20px;
+  }
+
+  .comeBack {
+    font-size: 15px;
+    padding: 10px 25px;
+    margin-top: 30px;
+    max-width: 300px;
+  }
+
+  .logo {
+    margin-top: 50px;
+    height: 26px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .win {
+    padding: 60px 20px 25px;
+    max-width: 380px;
+  }
+
+  .spin {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .gift {
+    font-size: 20px;
+  }
+
+  .comeBack {
+    font-size: 15px;
+    padding: 10px 25px;
+    max-width: 300px;
+  }
+
+  .logo {
+    margin-top: 50px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .win {
+    max-width: 300px;
+    max-height: 300px;
+    padding: 40px 0 20px
+  }
+
+  .title {
+    font-size: 21px;
+    line-height: 25px;
+  }
+
+  .gift {
+    font-size: 17px;
+    line-height: 20px;
+    margin-top: 15px;
+  }
+
+  .comeBack {
+    font-size: 12px;
+    padding: 10px 10px;
+    max-width: 220px;
+    margin-top: 20px;
+  }
+
+  .logo {
+    height: 22px;
+    margin-top: 30px;
+  }
+
+}
+
+

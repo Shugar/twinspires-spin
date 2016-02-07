@@ -25,3 +25,49 @@
   color: #2c93d1;
   width: 70%;
 }
+
+@media screen and (max-width: 960px) {
+  .text {
+    font-size: 28px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    padding: 15px 10px;
+  }
+
+  .logo {
+    height: 26px;
+    vertical-align: bottom;
+  }
+
+  .image {
+    height: 100%;
+  }
+
+  .text {
+    font-size: 18px;
+    vertical-align: bottom;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .logo,
+  .text {
+    vertical-align: middle;
+  }
+
+  .logo {
+    width: 54%;
+  }
+
+  .text {
+    width: 46%;
+    text-align: left;
+  }
+}

@@ -30,7 +30,9 @@ export class Comments extends Component {
               For every $20 you deposit, you get a new spin.
             </div>
           </div>
-          <div styleName='button'>Deposit and Play Again</div>
+          <div styleName='button-container'>
+            <a href={'https://www.twinspires.com/account/deposit?referrer=raf_email'} styleName='button'>Deposit and Play Again</a>
+          </div>
         </div>
       );
     }

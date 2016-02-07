@@ -2,7 +2,8 @@ import React from 'react'
 import Cookie from 'js-cookie'
 import Header from '../../components/Header/Header'
 import Comments from '../../components/Comments/Comments'
-import Main from '../../components/Main/Main'
+import Spin from '../../components/Spin/Spin'
+import Login from '../../components/Login/Login'
 import CSSModules from 'react-css-modules'
 import '../../styles/core.scss'
 
@@ -30,7 +31,8 @@ Cdi.AppConfig.PATH = {};
 export default class App extends React.Component {
 
   state = {
-    loggedIn: !!(Cookie.get("ACCT")),
+    // loggedIn: !!(Cookie.get("ACCT")),
+    loggedIn: false,
     username: Cookie.get('NAME') || ''
   }
 
@@ -38,9 +40,22 @@ export default class App extends React.Component {
     return (
       <div styleName='container'>
         <Header />
-        <Main />
+        <div styleName='main'>
+          <div styleName='spin'>
+            <Spin loggedIn={this.state.loggedIn} />
+          </div>
+          <div styleName='login'>
+            <Login ourFunction={this._ourFunction.bind()} loggedIn={this.state.loggedIn} />
+          </div>
+        </div>
         <Comments loggedIn={this.state.loggedIn} />
       </div>
     );
+  }
+
+  _ourFunction = () => {
+    this.setState({
+      loggedIn: !this.state.loggedIn
+    })
   }
 }
