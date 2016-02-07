@@ -56,6 +56,6 @@ export default class App extends React.Component {
   _ourFunction = () => {
     this.setState({
       loggedIn: !this.state.loggedIn
-    })
+    });
   }
 }
