@@ -8,13 +8,10 @@ export class Login extends React.Component {
   state = {
     login: this.props.login,
     password: this.props.password,
-    ourFunction: this.props.ourFunction,
-    loggedIn: this.props.loggedIn
+    ourFunction: this.props.ourFunction
   };
 
   render () {
-
-    console.log(this.state.loggedIn)
 
     let loginForm = (
       <form method="post" action="https://www.twinspires.com/php/login.php">
@@ -31,7 +28,7 @@ export class Login extends React.Component {
 
           <input onChange={this._onChangeLogin} styleName='input' type='text' name='acct' maxLength='100' placeholder='Username' />
           <input onChange={this._onChangePassword} styleName='input' name='pin' maxLength='16' type='password' placeholder='Password' />
-          <div onClick={this.state.ourFunction} styleName='login'>Login</div>
+          <div onClick={this.props.ourFunction} styleName='login'>Login</div>
           <a styleName='link' target="_blank" href='https://www.twinspires.com/account/password/request'>Forgot username/password?</a>
         </div>
 
@@ -47,24 +44,23 @@ export class Login extends React.Component {
       </form>
     );
 
-    if (this.state.loggedIn) {
-      loginForm = (
-        <div styleName='loggedIn'>
-          <div styleName='title'>How to redeem your prize</div>
-          <div styleName='list'>
-            <div styleName='subtitle'>1) Place $10+ in bets on your favorite race</div>
-            <div styleName='subtitle'>2) You will get $10 FREE in your account within 24 hours</div>
-          </div>
-          <div styleName='button'>
-            Redeem Prize Now!
-          </div>
+    let logged = (
+      <div styleName='loggedIn'>
+        <div styleName='title'>How to redeem your prize</div>
+        <div styleName='list'>
+          <div styleName='subtitle'>1) Place $10+ in bets on your favorite race</div>
+          <div styleName='subtitle'>2) You will get $10 FREE in your account within 24 hours</div>
         </div>
-      );
-    }
+        <div styleName='button'>
+          Redeem Prize Now!
+        </div>
+      </div>
+    );
+
 
     return (
       <div styleName='login-container'>
-        {loginForm}
+        { this.props.loggedIn ? logged : loginForm }
       </div>
     )
   }

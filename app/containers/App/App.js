@@ -45,7 +45,7 @@ export default class App extends React.Component {
             <Spin loggedIn={this.state.loggedIn} />
           </div>
           <div styleName='login'>
-            <Login ourFunction={this._ourFunction.bind()} loggedIn={this.state.loggedIn} />
+            <Login ourFunction={this._ourFunction} loggedIn={this.state.loggedIn} />
           </div>
         </div>
         <Comments loggedIn={this.state.loggedIn} />
