@@ -37,7 +37,7 @@ export class Login extends React.Component {
           <div styleName='iconButton'>
             <img src={'http://shugar.github.io/twinspires-spin/gift.png'} />
           </div>
-          <div styleName='button'>
+          <div styleName='button' onClick={this.props.onSpinClick}>
             SPIN NOW
           </div>
         </div>

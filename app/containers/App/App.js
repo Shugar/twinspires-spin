@@ -33,7 +33,8 @@ export default class App extends React.Component {
   state = {
     // loggedIn: !!(Cookie.get("ACCT")),
     loggedIn: false,
-    username: Cookie.get('NAME') || ''
+    username: Cookie.get('NAME') || '',
+    spinRotate: false
   }
 
   render() {
@@ -42,10 +43,10 @@ export default class App extends React.Component {
         <Header />
         <div styleName='main'>
           <div styleName='spin'>
-            <Spin loggedIn={this.state.loggedIn} />
+            <Spin spinRotate={this.state.spinRotate} loggedIn={this.state.loggedIn} />
           </div>
           <div styleName='login'>
-            <Login ourFunction={this._ourFunction} loggedIn={this.state.loggedIn} />
+            <Login ourFunction={this._ourFunction} onSpinClick={this._spinRotate} loggedIn={this.state.loggedIn} />
           </div>
         </div>
         <Comments loggedIn={this.state.loggedIn} />
@@ -56,6 +57,12 @@ export default class App extends React.Component {
   _ourFunction = () => {
     this.setState({
       loggedIn: !this.state.loggedIn
+    });
+  }
+
+  _spinRotate = () => {
+    this.setState({
+      spinRotate: !this.state.spinRotate
     });
   }
 }
