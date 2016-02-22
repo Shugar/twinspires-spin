@@ -6,8 +6,10 @@ import Spin from '../../components/Spin/Spin'
 import Login from '../../components/Login/Login'
 import CSSModules from 'react-css-modules'
 import '../../styles/core.scss'
-
+import moment from 'moment'
 import styles from './App.scss';
+
+import * as DATA from 'DATA.json'
 
 var Cdi = Cdi || {};
 Cdi.AppConfig = Cdi.AppConfig || {};
@@ -26,7 +28,6 @@ Cdi.Service = Cdi.Service || {};
 Cdi.Service.ADW_ACCOUNT_BALANCE = "ADW_ACCOUNT_BALANCE"
 Cdi.AppConfig.PATH = {};
 
-
 @CSSModules(styles)
 export default class App extends React.Component {
 
@@ -38,15 +39,22 @@ export default class App extends React.Component {
   }
 
   render() {
+
+    var today = moment().isoWeekday();
+
     return (
       <div styleName='container'>
         <Header />
         <div styleName='main'>
           <div styleName='spin'>
-            <Spin spinRotate={this.state.spinRotate} loggedIn={this.state.loggedIn} />
+            <Spin today={DATA[today]}
+                  spinRotate={this.state.spinRotate} />
           </div>
           <div styleName='login'>
-            <Login ourFunction={this._ourFunction} onSpinClick={this._spinRotate} loggedIn={this.state.loggedIn} />
+            <Login today={DATA[today]}
+                   ourFunction={this._ourFunction}
+                   onSpinClick={this._spinRotate}
+                   loggedIn={this.state.loggedIn} />
           </div>
         </div>
         <Comments loggedIn={this.state.loggedIn} />
