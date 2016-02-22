@@ -20,7 +20,7 @@ export class Comments extends Component {
       secondComment = (
         <div styleName='commentTwo'>
           <div styleName='image'>
-            <img src={'http://shugar.github.io/twinspires-spin/money.png'} />
+            <img src={'https://www.twinspires.com/sites/twinspires.com/files/money.png'} />
           </div>
           <div styleName='textBlock'>
             <div styleName='title'>
@@ -31,7 +31,7 @@ export class Comments extends Component {
             </div>
           </div>
           <div styleName='button-container'>
-            <a href={'https://www.twinspires.com/account/deposit?referrer=raf_email'} styleName='button'>Deposit and Play Again</a>
+            <a href={'https://www.twinspires.com/account/deposit?referrer=spin_and_win'} styleName='button'>Deposit and Play Again</a>
           </div>
         </div>
       );
@@ -41,7 +41,7 @@ export class Comments extends Component {
       <div styleName='comments'>
         <div styleName='commentOne'>
           <div styleName='image'>
-            <img src={'http://shugar.github.io/twinspires-spin/calendar.png'} />
+            <img src={'https://www.twinspires.com/sites/twinspires.com/files/calendar.png'} />
           </div>
           <div styleName='textBlock'>
             <div styleName='text'>

@@ -3,18 +3,24 @@
     "key": "1",
     "gift": "FREE $5 BET",
     "message": "Come back tomorrow for a chance to win more prizes!",
+    "redeemButtonText": "Bet Now",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win1",
     "redeem": "Your FREE $5 credit will be automatically added to your account within 24h"
   },
   "2": {
     "key": "2",
     "gift": "Thank you for playing! Unfortunately you did not win today.",
     "message": "Come back tomorrow for another chance to win!",
+    "redeemButtonText": "Back to TwinSpires",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win2",
     "redeem": "Would you like more spins? For every $20 deposit into your account, you get a new spin."
   },
   "3": {
     "key": "3",
     "gift": "DOUBLE YOUR EARNINGS on any winning bet",
     "message": "Come back tomorrow for a chance to win more prizes!",
+    "redeemButtonText": "Redeem Prize Now!",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win3",
     "redeem": [
       "Place any winning bet today",
       "Your winnings will be doubled* within 24 hours"
@@ -25,6 +31,8 @@
     "key": "4",
     "gift": "$10 FREE when you BET $10+",
     "message": "Come back tomorrow for a chance to win more prizes!",
+    "redeemButtonText": "Redeem Prize Now!",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win4",
     "redeem": [
       "Place $10+ in bets on your favorite race",
       "You will get $10 FREE in your account within 24 hours"
@@ -34,6 +42,8 @@
     "key": "5",
     "gift": "Bet $100, Get $20 FREE",
     "message": "Come back tomorrow for a chance to win more prizes!",
+    "redeemButtonText": "Redeem Prize Now!",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win5",
     "redeem": [
       "Bet $100+ on your favorite races",
       "$20 FREE will be added to your account within 24 hours"
@@ -43,6 +53,8 @@
     "key": "6",
     "gift": "Bet $25+, Get $5 FREE",
     "message": "Come back tomorrow for a chance to win more prizes!",
+    "redeemButtonText": "Redeem Prize Now!",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win6",
     "redeem": [
       "Bet $25+ on your favorite races",
       "$5 FREE will be added to your account within 24 hours"
@@ -52,6 +64,8 @@
     "key": "7",
     "gift": "Bet $50+, Get $10 FREE",
     "message": "Come back tomorrow for a chance to win more prizes!",
+    "redeemButtonText": "Redeem Prize Now!",
+    "redeemLink": "http://www.twinspires.com/wager/start?referrer=spin_and_win7",
     "redeem": [
       "Bet $50+ on your favorite races",
       "$10 FREE will be added to your account within 24h"

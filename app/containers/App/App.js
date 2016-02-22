@@ -33,15 +33,14 @@ export default class App extends React.Component {
 
   state = {
     // loggedIn: !!(Cookie.get("ACCT")),
-    loggedIn: false,
+    loggedIn: true,
     username: Cookie.get('NAME') || '',
     spinRotate: false
   }
 
   render() {
 
-    // var today = moment().isoWeekday();
-    var today = 7;
+    var today = moment().isoWeekday();
 
     return (
       <div styleName='container'>
@@ -54,7 +53,6 @@ export default class App extends React.Component {
           </div>
           <div styleName='login'>
             <Login today={DATA[today]}
-                   onLoginClick={this._onLoginClick}
                    onSpinClick={this._spinRotate}
                    loggedIn={this.state.loggedIn} />
           </div>
@@ -62,12 +60,6 @@ export default class App extends React.Component {
         <Comments loggedIn={this.state.loggedIn} />
       </div>
     );
-  }
-
-  _onLoginClick = () => {
-    this.setState({
-      loggedIn: !this.state.loggedIn
-    });
   }
 
   _spinRotate = () => {

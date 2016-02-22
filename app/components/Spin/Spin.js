@@ -9,14 +9,14 @@ import transitions from './Transition.scss'
 export class Spin extends React.Component {
 
   state = {
-    today: this.props.today || '$10 FREE when you BET $10+',
-    rotatePlease: this.props.spinRotate,
+    today: this.props.today,
+    getGift: this.props.spinRotate,
     transitionSpin: false
   }
 
   componentWillMount = () => {
     this.setState({
-      rotatePlease: false
+      getGift: false
     });
   }
 
@@ -27,8 +27,9 @@ export class Spin extends React.Component {
       });
       setTimeout(() => {
         this.setState({
-          rotatePlease: nextProps.spinRotate
+          getGift: nextProps.spinRotate
         });
+        localStorage.setItem('lastSpin',  this.state.today.key);
       }, 3000);
     }
   }
@@ -43,7 +44,7 @@ export class Spin extends React.Component {
       );
     } else {
       spinOrWin = (
-        <img styleName='spin' src={'http://shugar.github.io/twinspires-spin/spin.svg'} />
+        <img styleName='spin' src={'https://www.twinspires.com/sites/twinspires.com/files/spin.png'} />
       );
     }
 
@@ -52,7 +53,7 @@ export class Spin extends React.Component {
       youWon = '';
     }
 
-    if (this.state.rotatePlease) {
+    if (this.state.getGift || localStorage.getItem('lastSpin') === this.state.today.key) {
       spinOrWin = (
         <div styleName='win'>
           <div styleName='title'>
@@ -66,7 +67,7 @@ export class Spin extends React.Component {
           <div styleName='comeBack'>
             {this.props.today.message}
           </div>
-          <img styleName='logo' src={'http://shugar.github.io/twinspires-spin/logo.png'} />
+          <img styleName='logo' src={'https://www.twinspires.com/sites/twinspires.com/files/logo.png'} />
         </div>
       );
     }

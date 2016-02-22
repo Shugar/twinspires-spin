@@ -7,6 +7,7 @@ export class Login extends React.Component {
 
   state = {
     login: this.props.login,
+    today: this.props.today,
     password: this.props.password,
     onLoginClick: this.props.onLoginClick,
     removeForm: false
@@ -45,19 +46,20 @@ export class Login extends React.Component {
         <div styleName='title'>How to redeem your prize</div>
         {redeem}
         <div styleName='button'>
-          Redeem Prize Now!
+          <a href={this.props.today.redeemLink}></a>
+          {this.props.today.redeemButtonText}
         </div>
       </div>
     );
 
-    if (this.props.loggedIn) {
+    if (this.props.loggedIn === true) {
       loginForm = (
         <form method="post" action="https://www.twinspires.com/php/login.php">
           <div styleName='title'>How to Play</div>
           <div>
             <div styleName='formTitle'>Spin the Wheel to discover your Prize!</div>
             <div styleName='iconButton'>
-              <img src={'http://shugar.github.io/twinspires-spin/gift.png'} />
+              <img src={'https://www.twinspires.com/sites/twinspires.com/files/gift.png'} />
             </div>
             <div styleName='button' onClick={this._onSpinClick}>
               SPIN NOW
@@ -77,7 +79,7 @@ export class Login extends React.Component {
             <input type="hidden" value="0" name="blocklogin"/>
             <input type="hidden" value="1" name="wager"/>
             <input type="hidden" value="75c1c409d022d057054b07e99e0a5690" name="tmsid"/>
-            <input id="header_edit-redirect" type="hidden" value="https://www.twinspires.com/raf-email-test" name="redirect"/>
+            <input id="header_edit-redirect" type="hidden" value="https://www.twinspires.com/spin-and-win" name="redirect"/>
 
             <input onChange={this._onChangeLogin}
                    styleName='input'
@@ -95,14 +97,14 @@ export class Login extends React.Component {
                    type='password'
                    placeholder='Password' />
 
-            <div onClick={this.props.onLoginClick} styleName='login'>Login</div>
+            <button type="submit" styleName='login'>Login</button>
             <a styleName='link' target="_blank" href='https://www.twinspires.com/account/password/request'>Forgot username/password?</a>
           </div>
 
           <div>
             <div styleName='formTitle'>2) Spin the Wheel to discover your Prize!</div>
             <div styleName='iconButton'>
-              <img src={'http://shugar.github.io/twinspires-spin/gift.png'} />
+              <img src={'https://www.twinspires.com/sites/twinspires.com/files/gift.png'} />
             </div>
             <div styleName='button' onClick={this._focusInputLoginIn}>
               SPIN NOW
@@ -112,7 +114,7 @@ export class Login extends React.Component {
       );
     }
 
-    if (this.state.removeForm) {
+    if (this.state.removeForm || localStorage.getItem('lastSpin') === this.state.today.key) {
       loginForm = logged;
     }
 
