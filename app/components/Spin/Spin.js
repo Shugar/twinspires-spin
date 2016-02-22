@@ -55,9 +55,6 @@ export class Spin extends React.Component {
     }
 
     if (this.state.rotatePlease) {
-
-      console.log(this.props.today.key);
-
       spinOrWin = (
         <div styleName='win'>
           <div styleName='title'>
