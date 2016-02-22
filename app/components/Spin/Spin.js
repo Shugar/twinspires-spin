@@ -47,8 +47,6 @@ export class Spin extends React.Component {
       );
     }
 
-    console.log(this.props.today.key);
-
     let youWon = 'You won:';
     if (this.props.today.key === '2') {
       youWon = '';
