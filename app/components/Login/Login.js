@@ -8,7 +8,7 @@ export class Login extends React.Component {
   state = {
     login: this.props.login,
     password: this.props.password,
-    ourFunction: this.props.ourFunction,
+    onLoginClick: this.props.onLoginClick,
     removeForm: false
   };
 
@@ -95,7 +95,7 @@ export class Login extends React.Component {
                    type='password'
                    placeholder='Password' />
 
-            <div onClick={this.props.ourFunction} styleName='login'>Login</div>
+            <div onClick={this.props.onLoginClick} styleName='login'>Login</div>
             <a styleName='link' target="_blank" href='https://www.twinspires.com/account/password/request'>Forgot username/password?</a>
           </div>
 
@@ -130,7 +130,7 @@ export class Login extends React.Component {
       } else if (this.refs.password.value === '') {
         this.refs.password.focus();
       } else {
-        this.props.ourFunction();
+        this.props.onLoginClick();
       }
     }
   }

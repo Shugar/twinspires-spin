@@ -40,7 +40,8 @@ export default class App extends React.Component {
 
   render() {
 
-    var today = moment().isoWeekday();
+    // var today = moment().isoWeekday();
+    var today = 7;
 
     return (
       <div styleName='container'>
@@ -48,11 +49,12 @@ export default class App extends React.Component {
         <div styleName='main'>
           <div styleName='spin'>
             <Spin today={DATA[today]}
-                  spinRotate={this.state.spinRotate} />
+                  spinRotate={this.state.spinRotate}
+                  loggedIn={this.state.loggedIn} />
           </div>
           <div styleName='login'>
             <Login today={DATA[today]}
-                   ourFunction={this._ourFunction}
+                   onLoginClick={this._onLoginClick}
                    onSpinClick={this._spinRotate}
                    loggedIn={this.state.loggedIn} />
           </div>
@@ -62,7 +64,7 @@ export default class App extends React.Component {
     );
   }
 
-  _ourFunction = () => {
+  _onLoginClick = () => {
     this.setState({
       loggedIn: !this.state.loggedIn
     });

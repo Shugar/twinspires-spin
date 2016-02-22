@@ -2,8 +2,6 @@ import React from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './Spin.scss'
 import Cookie from 'js-cookie'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import ReactCSSTransitionReplace from 'react-css-transition-replace'
 
 import transitions from './Transition.scss'
 
@@ -23,15 +21,16 @@ export class Spin extends React.Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    this.setState({
-      transitionSpin: !this.state.transitionSpin
-    });
-
-    setTimeout(() => {
+    if (this.props.loggedIn === true) {
       this.setState({
-        rotatePlease: nextProps.spinRotate
+        transitionSpin: !this.state.transitionSpin
       });
-    }, 3000);
+      setTimeout(() => {
+        this.setState({
+          rotatePlease: nextProps.spinRotate
+        });
+      }, 3000);
+    }
   }
 
   render () {
@@ -48,13 +47,23 @@ export class Spin extends React.Component {
       );
     }
 
+    console.log(this.props.today.key);
+
+    let youWon = 'You won:';
+    if (this.props.today.key === '2') {
+      youWon = '';
+    }
+
     if (this.state.rotatePlease) {
+
+      console.log(this.props.today.key);
+
       spinOrWin = (
         <div styleName='win'>
           <div styleName='title'>
             Congratulations!
             <br />
-            You Won:
+            {youWon}
           </div>
           <div styleName='gift'>
             {this.props.today.gift}
